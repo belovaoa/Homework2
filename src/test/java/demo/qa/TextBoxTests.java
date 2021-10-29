@@ -13,5 +13,7 @@ public class TextBoxTests {
        $("#lastName").setValue("Last1");
        $("#userEmail").setValue("last1@ya.ru");
        $(byText("Female")).click();
+       $("#userNumber").setValue("7991977777");
+
     }
 }
