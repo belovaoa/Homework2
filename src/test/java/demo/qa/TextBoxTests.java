@@ -5,8 +5,6 @@ import com.codeborne.selenide.Configuration;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
-import java.io.File;
-
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.*;
@@ -35,15 +33,17 @@ public class TextBoxTests {
        $("#dateOfBirthInput").click();
        $(".react-datepicker__month-select").selectOptionByValue("5");
        $(".react-datepicker__year-select").selectOptionByValue("2000");
-       $$(".react-datepicker__day").find(text("10")).click();
+       // $$(".react-datepicker__day").find(text("10")).click();
+        $(".react-datepicker__day--010:not(.react-datepicker__day--outside-month)").click();
 
        $("#subjectsInput").click();
        $("#subjectsInput").setValue("P");
        $(byText("Physics")).click();
 
-       $(byText("Sports")).click();
+       $("#hobbiesWrapper").$(byText("Sports")).click();
 
-       $("#uploadPicture").uploadFile(new File("src/test/resources/image.jpg"));
+        //$("#uploadPicture").uploadFile(new File("src/test/resources/img/imade.jpg"));
+       $("#uploadPicture").uploadFromClasspath("img/imade.jpg");
 
        $("#currentAddress").setValue("1Street 11");
 
@@ -55,8 +55,11 @@ public class TextBoxTests {
        $(byText("Delhi")).click();
 
        $("#submit").click();
-
-       $(".table-responsive").shouldHave(text("Name1 Last1"), text("last1@ya.ru"), text("Female"), text("7991977777"), text("10 June,2000"), text("Physics"), text("Sports"), text("image.jpg"), text("1Street11"), text("NCR Delhi"));
+       $("#example-modal-sizes-title-lg").shouldHave(text("Thanks for submitting the form"));
+       $(".table-responsive").shouldHave(text("Name1 Last1"),
+               text("last1@ya.ru"), text("Female"), text("7991977777"),
+               text("10 June,2000"), text("Physics"), text("Sports"),
+               text("imade.jpg"), text("1Street 11"), text("NCR Delhi"));
 
     }
 }
