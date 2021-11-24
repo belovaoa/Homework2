@@ -31,6 +31,7 @@ public class TextBoxTests {
        $("#dateOfBirthInput").click();
        $(".react-datepicker__month-select").selectOptionByValue("5");
        $(".react-datepicker__year-select").selectOptionByValue("2000");
+        // $$(".react-datepicker__day").find(text("10")).click();
        $(".react-datepicker__day--010:not(.react-datepicker__day--outside-month)").click();
 
        $("#subjectsInput").click();
