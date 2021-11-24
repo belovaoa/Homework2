@@ -13,7 +13,7 @@ public class TextBoxTests {
 
     @BeforeAll
     static void ConfigAllTests() {
-       Configuration.startMaximized = true;
+        Configuration.startMaximized = true;
     }
 
     @Test
@@ -21,20 +21,17 @@ public class TextBoxTests {
        open("https://demoqa.com/automation-practice-form");
 
        $("[id=firstName]").setValue("Name1");
-
        $("#lastName").setValue("Last1");
-
        $("#userEmail").setValue("last1@ya.ru");
 
        $(byText("Female")).click();
 
-       $("#userNumber").setValue("7991977777");
+       $("#userNumber").setValue("7991977778");
 
        $("#dateOfBirthInput").click();
        $(".react-datepicker__month-select").selectOptionByValue("5");
        $(".react-datepicker__year-select").selectOptionByValue("2000");
-       // $$(".react-datepicker__day").find(text("10")).click();
-        $(".react-datepicker__day--010:not(.react-datepicker__day--outside-month)").click();
+       $(".react-datepicker__day--010:not(.react-datepicker__day--outside-month)").click();
 
        $("#subjectsInput").click();
        $("#subjectsInput").setValue("P");
@@ -47,7 +44,6 @@ public class TextBoxTests {
 
        $("#currentAddress").setValue("1Street 11");
 
-
        $("#state").click();
        $(byText("NCR")).click();
 
@@ -57,9 +53,8 @@ public class TextBoxTests {
        $("#submit").click();
        $("#example-modal-sizes-title-lg").shouldHave(text("Thanks for submitting the form"));
        $(".table-responsive").shouldHave(text("Name1 Last1"),
-               text("last1@ya.ru"), text("Female"), text("7991977777"),
+               text("last1@ya.ru"), text("Female"), text("7991977778"),
                text("10 June,2000"), text("Physics"), text("Sports"),
                text("imade.jpg"), text("1Street 11"), text("NCR Delhi"));
-
     }
 }
