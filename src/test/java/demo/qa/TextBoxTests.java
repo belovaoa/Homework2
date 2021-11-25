@@ -26,7 +26,7 @@ public class TextBoxTests {
 
        $(byText("Female")).click();
 
-       $("#userNumber").setValue("7991977778");
+       $("#userNumber").setValue("7991977777");
 
        $("#dateOfBirthInput").click();
        $(".react-datepicker__month-select").selectOptionByValue("5");
@@ -54,7 +54,7 @@ public class TextBoxTests {
        $("#submit").click();
        $("#example-modal-sizes-title-lg").shouldHave(text("Thanks for submitting the form"));
        $(".table-responsive").shouldHave(text("Name1 Last1"),
-               text("last1@ya.ru"), text("Female"), text("7991977778"),
+               text("last1@ya.ru"), text("Female"), text("7991977777"),
                text("10 June,2000"), text("Physics"), text("Sports"),
                text("imade.jpg"), text("1Street 11"), text("NCR Delhi"));
     }
