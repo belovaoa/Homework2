@@ -21,7 +21,7 @@ public class TextBoxTests {
        open("https://demoqa.com/automation-practice-form");
 
        $("[id=firstName]").setValue("Oleg");
-       $("#lastName").setValue("Divov");
+       $("#lastName").setValue("Last");
        $("#userEmail").setValue("last1@ya.ru");
 
        $(byText("Female")).click();
@@ -53,7 +53,7 @@ public class TextBoxTests {
 
        $("#submit").click();
        $("#example-modal-sizes-title-lg").shouldHave(text("Thanks for submitting the form"));
-       $(".table-responsive").shouldHave(text("Oleg Divov"),
+       $(".table-responsive").shouldHave(text("Oleg Last"),
                text("last1@ya.ru"), text("Female"), text("7991977777"),
                text("10 June,2000"), text("Physics"), text("Sports"),
                text("imade.jpg"), text("1Street 12"), text("NCR Delhi"));
