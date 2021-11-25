@@ -43,7 +43,7 @@ public class TextBoxTests {
         //$("#uploadPicture").uploadFile(new File("src/test/resources/img/imade.jpg"));
        $("#uploadPicture").uploadFromClasspath("img/imade.jpg");
 
-       $("#currentAddress").setValue("1Street 12");
+       $("#currentAddress").setValue("1Street 10");
 
        $("#state").click();
        $(byText("NCR")).click();
@@ -56,6 +56,6 @@ public class TextBoxTests {
        $(".table-responsive").shouldHave(text("Oleg Last"),
                text("last1@ya.ru"), text("Female"), text("7991977777"),
                text("10 June,2000"), text("Physics"), text("Sports"),
-               text("imade.jpg"), text("1Street 12"), text("NCR Delhi"));
+               text("imade.jpg"), text("1Street 10"), text("NCR Delhi"));
     }
 }
